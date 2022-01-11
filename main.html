@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+</head>
+
+<style media="screen">
+  /* body {
+    position: relative;
+    overflow: hidden;
+  } */
+
+  .body_wrap_main {
+    width: 100vw;
+    height: 100vh;
+    background: url(images/main_bg.png)no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+
+  .body_con {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+
+  .main_logo {
+    position: absolute;
+    left: 50%;
+    top: 5%;
+    transform: translate(-50%);
+    z-index: 300;
+  }
+
+  .main_logo img {
+    width: 9.375vw;
+  }
+
+  /*  */
+
+  .notify-wrap {
+    /* position:relative; */
+    display: none;
+    z-index: 100;
+    position: absolute;
+    top: 32%;
+    transform: translate(-32%; );
+  }
+
+  .notify-wrap-inner {
+    /* height: 120px; */
+    /* line-height:40px; */
+
+    text-align: center;
+  }
+
+  .notify-wrap img {
+    width: 100.989vw;
+    /* height: 5.572vw; */
+  }
+
+  .ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .notify-scroll {
+    display: inline-block;
+    animation: text-scroll 35s linear infinite;
+  }
+
+  @keyframes text-scroll {
+    from {
+      transform: translateX(20%);
+      -moz-transform: translateX(20%);
+      -webkit-transform: translateX(20%);
+      -o-transform: translateX(20%);
+      -ms-transform: translateX(20%);
+    }
+
+    to {
+      transform: translateX(-100%);
+      -moz-transform: translateX(-100%);
+      -webkit-transform: translateX(-100%);
+      -o-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+    }
+  }
+
+  .notify-scroll ul {
+    display: inline;
+  }
+
+  .notify-scroll ul li {
+    display: inline-block;
+    padding-right: 350px;
+  }
+
+  .notify-wrap.active {
+    display: block;
+  }
+
+  .cong_mun {
+    position: absolute;
+    z-index: 10;
+    display: none;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 17.0833vw;
+    height: 18.75vw;
+
+    animation: cong_mon 2s;
+    animation-fill-mode: forwards !important;
+    animation-iteration-count: 1;
+  }
+
+  .cong_mun img {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* 퍼져라 */
+
+
+
+  .cong_box {
+    display: none;
+  }
+
+  .cong_box.active {
+    display: block;
+  }
+
+
+
+
+  .cong_con_1 {
+    width: 47.552vw;
+    height: 67.5vw;
+    position: absolute;
+    top: -52%;
+    left: -24%;
+    animation: cong_con_1 2.5s;
+    animation-fill-mode: forwards !important;
+    animation-iteration-count: 1;
+    /* display: none; */
+  }
+
+  .cong_con_1 img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .cong_con_2 {
+    width: 48.958vw;
+    height: 37.44vw;
+    position: absolute;
+    top: 68%;
+    left: -6%;
+    animation: cong_con_2 2.5s;
+    animation-fill-mode: forwards !important;
+    animation-iteration-count: 1;
+    /* display: none; */
+  }
+
+  .cong_con_2 img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .cong_con_3 {
+    width: 43.281vw;
+    height: 54.583vw;
+    position: absolute;
+    top: -41%;
+    left: 60%;
+    animation: cong_con_3 2.5s;
+    animation-fill-mode: forwards !important;
+    animation-iteration-count: 1;
+    /* display: none; */
+  }
+
+  .cong_con_3 img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .cong_con_4 {
+    width: 47.812vw;
+    height: 64.322vw;
+    position: absolute;
+    top: -80%;
+    left: 16%;
+    animation: cong_con_4 2.5s;
+    animation-fill-mode: forwards !important;
+    animation-iteration-count: 1;
+    /* display: none; */
+  }
+
+  .cong_con_4 img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .cong_con_5 {
+    width: 68.4375vw;
+    height: 61.458vw;
+    position: absolute;
+    top: 31%;
+    left: 38%;
+    animation: cong_con_5 2.5s;
+    animation-fill-mode: forwards !important;
+    animation-iteration-count: 1;
+    /* display: none; */
+  }
+
+  .cong_con_5 img {
+    width: 100%;
+    height: 100%;
+  }
+
+
+
+
+
+
+
+
+  @keyframes cong_mon {
+    0% {
+      transform: translateX(-50%) translateY(-50%) scale(0.3) rotateZ(0)
+    }
+
+    50% {
+      transform: translateX(-50%) translateY(-50%) scale(1) rotateZ(0)
+    }
+
+    100% {
+      transform: translateX(-50%) translateY(-50%) scale(0) rotateZ(0)
+    }
+  }
+
+  @keyframes cong_con_1 {
+    0% {
+      transform: translateX(110%) translateY(30%) scale(0) rotateZ(0);
+      opacity: 0.2;
+    }
+
+    100% {
+      transform: translateX(0%) translateY(0%) scale(1) rotateZ(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes cong_con_2 {
+    0% {
+      transform: translateX(68%) translateY(-80%) scale(0) rotateZ(0);
+      opacity: 0.2;
+    }
+
+    100% {
+      transform: translateX(0%) translateY(0%) scale(1) rotateZ(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes cong_con_3 {
+    0% {
+      transform: translateX(-80%) translateY(40%) scale(0) rotateZ(0);
+      opacity: 0.2;
+    }
+
+    100% {
+      transform: translateX(0%) translateY(0%) scale(1) rotateZ(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes cong_con_4 {
+    0% {
+      transform: translateX(20%) translateY(60%) scale(0) rotateZ(0);
+      opacity: 0.2;
+    }
+
+    100% {
+      transform: translateX(0%) translateY(0%) scale(1) rotateZ(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes cong_con_5 {
+    0% {
+      transform: translateX(-35%) translateY(-35%) scale(0) rotateZ(0);
+      opacity: 0.2;
+    }
+
+    100% {
+      transform: translateX(0%) translateY(0%) scale(1) rotateZ(0);
+      opacity: 1;
+    }
+  }
+
+
+
+
+
+  .enter_btn {
+    display: none;
+    background: url(images/btn_w.png)no-repeat;
+    background-size: 100%;
+    width: 8.75vw;
+    height: 5vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: 0.5s;
+    transform: translate(-50%);
+    z-index: 300;
+    /* transform: rotateY(30px;); */
+
+  }
+
+  .enter_btn.active {
+    display: block;
+    top: 55%;
+    /* transform: rotateY(0px;); */
+  }
+
+  .enter_btn:hover {
+    background: url(images/btn_w_h.png)no-repeat;
+    background-size: 100%;
+  }
+</style>
+
+<body>
+
+  <div class="body_wrap_main">
+  </div>
+  <div class="body_con">
+
+
+
+
+  </div>
+
+
+  <div class="cong_mun">
+    <img src="images/cong_mun.png" alt="">
+  </div>
+
+  <div class="main_logo">
+    <img src="images/main_logo.png" alt="">
+  </div>
+
+  <section class="notify-wrap">
+    <div class="notify-wrap-inner ellipsis">
+      <div class="notify-scroll">
+        <ul>
+          <li>
+            <img src="images/wave_text.png" alt="">
+          </li>
+          <li>
+            <img src="images/wave_text.png" alt="">
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <a href="" class="enter_btn">
+    <div></div>
+  </a>
+
+
+  <div id="wrapper">
+
+
+    <div class="cong_box">
+      <div class="cong_con_1">
+        <img src="images/cong_1.png" alt="">
+      </div>
+    </div>
+
+    <div class="cong_box">
+      <div class="cong_con_2">
+        <img src="images/cong_2.png" alt="">
+      </div>
+    </div>
+
+    <div class="cong_box">
+      <div class="cong_con_3">
+        <img src="images/cong_3.png" alt="">
+      </div>
+    </div>
+
+    <div class="cong_box">
+      <div class="cong_con_4">
+        <img src="images/cong_4.png" alt="">
+      </div>
+    </div>
+
+    <div class="cong_box">
+      <div class="cong_con_5">
+        <img src="images/cong_5.png" alt="">
+      </div>
+    </div>
+
+
+
+
+  </div>
+
+
+  <script type="text/javascript">
+    $(function() {
+      function loop() {
+        $('.body_wrap')
+          .animate({
+            width: '103%'
+          }, 5000)
+          .animate({
+            width: '100%'
+          }, 5000, loop);
+      }
+      loop();
+
+      setTimeout(function() {
+        $('.notify-wrap').addClass('active')
+      }, 3000);
+
+      setTimeout(function() {
+        $('.enter_btn').addClass('active')
+      }, 3000);
+
+
+
+
+    });
+
+
+    $(document).ready(function() {
+      $(".cong_mun").fadeIn(1000, function() {
+        $(".cong_mun").fadeOut(700);
+      });
+
+      setTimeout(function() {
+        $('.cong_box').addClass('active')
+      }, 1550, function() {
+        $('.cong_con_1').fadeIn(1000);
+      });
+
+
+
+      // $( ".cong_con_1" ).fadeIn(1000)
+    });
+
+    $(function() {
+      baloonUp();
+
+      function baloonUp() {
+        $('.cong_con_1').animate({
+          'top': '-48%'
+        }, 2000, null, baloonDown);
+      }
+
+      function baloonDown() {
+        $('.cong_con_1').animate({
+          'top': '-49%'
+        }, 2000, null, baloonUp);
+      }
+    });
+
+    $(function() {
+      baloonUp();
+
+      function baloonUp() {
+        $('.cong_con_2').animate({
+          'left': '-6%'
+        }, 2000, null, baloonDown);
+      }
+
+      function baloonDown() {
+        $('.cong_con_2').animate({
+          'left': '-7%'
+        }, 2000, null, baloonUp);
+      }
+    });
+
+    $(function() {
+      baloonUp();
+
+      function baloonUp() {
+        $('.cong_con_3').animate({
+          'left': '60%'
+        }, 2000, null, baloonDown);
+      }
+
+      function baloonDown() {
+        $('.cong_con_3').animate({
+          'left': '61%'
+        }, 2000, null, baloonUp);
+      }
+    });
+
+    $(function() {
+      baloonUp();
+
+      function baloonUp() {
+        $('.cong_con_4').animate({
+          'left': '17%'
+        }, 2000, null, baloonDown);
+      }
+
+      function baloonDown() {
+        $('.cong_con_4').animate({
+          'left': '18%'
+        }, 2000, null, baloonUp);
+      }
+    });
+
+
+    $(function() {
+      baloonUp();
+
+      function baloonUp() {
+        $('.cong_con_5').animate({
+          'top': '32%'
+        }, 2000, null, baloonDown);
+      }
+
+      function baloonDown() {
+        $('.cong_con_5').animate({
+          'top': '31%'
+        }, 2000, null, baloonUp);
+      }
+    });
+  </script>
+</body>
+
+</html>
